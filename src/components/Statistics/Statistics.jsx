@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import css from './Statistics.module.css';
 import { colorRandom } from '../../helper/colorRandom';
 
@@ -21,4 +22,15 @@ export const Statistics = ({ title = '', stats }) => {
       </ul>
     </section>
   );
+};
+
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      percentage: PropTypes.number,
+      id: PropTypes.string,
+    })
+  ),
 };
